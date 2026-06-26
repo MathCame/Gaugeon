@@ -77,7 +77,17 @@
     <h1>We don't do anything.</h1>
 
     <script>
-    document.querySelector("h1").addEventListener("dblclick", () => {
+    const title = document.querySelector("h1");
+
+    title.addEventListener("click", () => {
+        dataLayer.push({
+            event: "title_click"
+        });
+
+        console.log("Title clicked");
+    });
+
+    title.addEventListener("dblclick", () => {
         console.log("There's nothing here.");
     });
     </script>
