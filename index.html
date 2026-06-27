@@ -61,6 +61,50 @@
 
 </head>
 
+
+<a
+    id="whatsapp-button"
+    href="https://wa.me/+5519999448998"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
+    WhatsApp
+</a>
+
+<style>
+#whatsapp-button{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    padding:14px 18px;
+    background:#25D366;
+    color:#fff;
+    border-radius:999px;
+    font-family:"Inter",sans-serif;
+    font-size:15px;
+    font-weight:400;
+    text-decoration:none;
+    z-index:9999;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+
+#whatsapp-button:hover{
+    opacity:.86;
+}
+</style>
+
+<script>
+document.getElementById("whatsapp-button").addEventListener("click", function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: "whatsapp_click"
+    });
+
+    console.log("WhatsApp clicked");
+});
+</script>
+
+
 <body>
 
     <!-- Google Tag Manager (noscript) -->
