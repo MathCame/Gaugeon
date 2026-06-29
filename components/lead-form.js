@@ -28,7 +28,7 @@ class LeadForm extends HTMLElement {
                         id="lead-phone"
                         name="phone"
                         type="tel"
-                        placeholder="+55 12 34567 8910"
+                        placeholder="+55 19 99944 8998"
                         required>
                 </div>
 
@@ -39,7 +39,6 @@ class LeadForm extends HTMLElement {
         `;
 
         const form = this.querySelector("#lead-form");
-        const message = this.querySelector(".lead-form__message");
 
         form.addEventListener("submit", function(event) {
             event.preventDefault();
@@ -54,8 +53,16 @@ class LeadForm extends HTMLElement {
 
             console.log("New lead", lead);
 
-            message.textContent = "Thanks. We received your contact.";
-            form.reset();
+            window.dataLayer = window.dataLayer || [];
+
+            window.dataLayer.push({
+                event: "lead_form_submit",
+                lead_name: lead.name,
+                lead_email: lead.email,
+                lead_phone: lead.phone
+            });
+
+            window.location.href = "gracias.html";
         });
     }
 }
