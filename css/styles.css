@@ -9,18 +9,24 @@
 html,
 body{
     width:100%;
-    height:100%;
+    min-height:100%;
 }
 
 body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
     background:#fff;
     color:#000;
     font-family:"Inter",sans-serif;
-    overflow:hidden;
     cursor:default;
+}
+
+.page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    padding:48px 24px 96px;
 }
 
 h1{
@@ -29,10 +35,67 @@ h1{
     letter-spacing:-0.05em;
     user-select:none;
     transition:.25s;
+    text-align:center;
 }
 
 h1:hover{
     opacity:.55;
+}
+
+.lead-form{
+    width:min(100%,420px);
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.lead-form__group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.lead-form label{
+    font-size:13px;
+    font-weight:400;
+}
+
+.lead-form input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #d9d9d9;
+    border-radius:14px;
+    background:#fff;
+    color:#000;
+    font-family:"Inter",sans-serif;
+    font-size:15px;
+    outline:none;
+}
+
+.lead-form input:focus{
+    border-color:#000;
+}
+
+.lead-form button{
+    margin-top:4px;
+    padding:14px 18px;
+    border:0;
+    border-radius:999px;
+    background:#000;
+    color:#fff;
+    font-family:"Inter",sans-serif;
+    font-size:15px;
+    font-weight:400;
+    cursor:pointer;
+}
+
+.lead-form button:hover{
+    opacity:.82;
+}
+
+.lead-form__message{
+    min-height:20px;
+    font-size:13px;
 }
 
 #whatsapp-button{
@@ -53,4 +116,20 @@ h1:hover{
 
 #whatsapp-button:hover{
     opacity:.86;
+}
+
+@media (max-width:640px){
+    .page{
+        align-items:stretch;
+        gap:32px;
+    }
+
+    h1{
+        text-align:left;
+    }
+
+    #whatsapp-button{
+        right:16px;
+        bottom:16px;
+    }
 }
